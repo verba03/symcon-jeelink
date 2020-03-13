@@ -1,0 +1,18 @@
+{
+	"elements":
+    [
+        {
+            "type": "NumberSpinner",
+            "name": "SensorID",
+            "caption": "Sensor ID"
+        }
+    ],
+	"actions":
+	[],
+	"status":
+    [
+        { "code": 101,"icon": "active","caption": "Instanz ist erstellt"},
+        { "code": 102, "icon": "active", "caption": "Instanz ist aktiv" },
+        { "code": 104, "icon": "inactive", "caption": "Instanz ist inaktiv" }
+    ]
+}

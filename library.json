@@ -1,0 +1,13 @@
+{
+	"id": "{AB017F85-A73A-4B78-8F6A-16946D09768B}",
+	"author": "Volkmar Meineke",
+	"name": "Jeelink",
+	"url": "",
+	"compatibility": {
+    	"version": "4.2",
+    	"date": 1491343200
+		},
+	"version": "0.1",
+	"build": 0,
+	"date": 0
+}

@@ -1,0 +1,11 @@
+{
+	"id": "{2321D2A7-581B-4819-B825-D5F3A49BCAF3}",
+	"name": "TX29IT",
+	"type": 3,
+	"vendor": "VM",
+	"aliases": ["Lacrosse TX25/27/29-IT"],
+	"parentRequirements": ["{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}"],
+	"childRequirements": [],
+	"implemented": ["{018EF6B5-AB94-40C6-AA53-46943E824ACF}"],
+	"prefix": "TX29IT"
+}

@@ -1,0 +1,11 @@
+{
+	"id": "{B8250CD7-487C-489E-B025-2F32E6164731}",
+	"name": "BMP180",
+	"type": 3,
+	"vendor": "VM",
+	"aliases": ["BMP180"],
+	"parentRequirements": ["{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}"],
+	"childRequirements": [],
+	"implemented": ["{018EF6B5-AB94-40C6-AA53-46943E824ACF}"],
+	"prefix": "BMP180"
+}

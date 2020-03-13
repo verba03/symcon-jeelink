@@ -1,0 +1,16 @@
+{
+	"elements":
+    [
+        { "type": "NumberSpinner", "name": "SensorID", "caption": "Sensor ID" }
+    ],
+	"actions":
+	[
+		{ "name": "Text", "type": "ValidationTextBox", "caption": "Text" },
+		{ "type": "Button", "label": "Send", "onClick": "TX29DHT_Send($id, $Text);" }
+	],
+	"status":
+    [
+        { "code": 102, "icon": "active", "caption": "Instanz ist aktiv" },
+        { "code": 104, "icon": "inactive", "caption": "Instanz ist inaktiv" }
+    ]
+}

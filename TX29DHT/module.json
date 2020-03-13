@@ -1,0 +1,11 @@
+{
+	"id": "{A375E599-23E2-4D4C-B53E-46B022EE8DCB}",
+	"name": "TX29DHT",
+	"type": 3,
+	"vendor": "VM",
+	"aliases": ["Lacrosse TX29DHT-IT"],
+	"parentRequirements": ["{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}"],
+	"childRequirements": [],
+	"implemented": ["{018EF6B5-AB94-40C6-AA53-46943E824ACF}"],
+	"prefix": "TX29DHT"
+}
