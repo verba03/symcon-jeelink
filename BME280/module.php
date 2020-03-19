@@ -138,33 +138,13 @@ private function AbsoluteFeuchte(float $temperatur, int $relfeuchte) {
             $pressure    = ($bytes[16] * 256) + $bytes[17];
             // nur definierte Sensoren behandeln
             if ($bytes[2] == $this->ReadPropertyInteger("SensorID")) {
-               
-                //$old_temp = GetValueFloat($this->GetIDForIdent("TEMPERATUR"));
-                //$old_hum = GetValueInteger($this->GetIDForIdent("HUMIDITY"));
-                //$this->SendDebug('OLD_TEMP',$old_temp,0);
-                //$this->SendDebug('NEW_TEMP',$temperature,0);
-                //if ($humidity != $old_hum) {
-                    //if (($humidity <= $old_hum + 5) || ($humidity >= $old_hum - 5)) {
-                        SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
-                        SetValueInteger($this->GetIDForIdent("HUMIDITY"), $humidity);
-                        $dewpoint = $this->Dewpoint($temperature, $humidity);
-                        SetValueFloat($this->GetIDForIdent("DEWPOINT"), $dewpoint);
-                        $abshum   = $this->AbsoluteFeuchte($temperature, $humidity);
-                        SetValueFloat($this->GetIDForIdent("ABSHUM"), $abshum);
-                        SetValueInteger($this->GetIDForIdent("PRESSURE"), $pressure);
-                    //}
-                //}
-                //if ($temperature != $old_temp) {
-                    //if (($temperature <= $old_temp + 5.0) || ($temperature >= $old_temp - 5.0)) {
-                        SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
-                        SetValueInteger($this->GetIDForIdent("HUMIDITY"), $humidity);
-                        $dewpoint = $this->Dewpoint($temperature, $humidity);
-                        SetValueFloat($this->GetIDForIdent("DEWPOINT"), $dewpoint);
-                        $abshum   = $this->AbsoluteFeuchte($temperature, $humidity);
-                        SetValueFloat($this->GetIDForIdent("ABSHUM"), $abshum);
-                        SetValueInteger($this->GetIDForIdent("PRESSURE"), $pressure);
-                    //}
-                //}
+                SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
+                SetValueInteger($this->GetIDForIdent("HUMIDITY"), $humidity);
+                $dewpoint = $this->Dewpoint($temperature, $humidity);
+                SetValueFloat($this->GetIDForIdent("DEWPOINT"), $dewpoint);
+                $abshum   = $this->AbsoluteFeuchte($temperature, $humidity);
+                SetValueFloat($this->GetIDForIdent("ABSHUM"), $abshum);
+                SetValueInteger($this->GetIDForIdent("PRESSURE"), $pressure);
             }
         } //if
     } //function

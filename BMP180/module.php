@@ -108,15 +108,8 @@ class BMP180 extends IPSModule {
             $pressure    = ($bytes[16] * 256) + $bytes[17];
             // nur definierte Sensoren behandeln
             if ($bytes[2] == $this->ReadPropertyInteger("SensorID")) {
-                //$old_temp = GetValueFloat($this->GetIDForIdent("TEMPERATUR"));
-                //$this->SendDebug ('OLD_TEMP', $old_temp, 0);
-                //$this->SendDebug ('NEW_TEMP', $temperature, 0);
-                //if ($temperature != $old_temp) {
-                    //if (($temperature >= ($old_temp + 0.3)) || ($temperature <= ($old_temp - 0.3 ))) {
-                        SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
-                        SetValueInteger($this->GetIDForIdent("PRESSURE"), $pressure);
-                    //}
-                //}
+                SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
+                SetValueInteger($this->GetIDForIdent("PRESSURE"), $pressure);
             }
         } //if
     }
