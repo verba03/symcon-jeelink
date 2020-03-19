@@ -155,7 +155,7 @@ private function AbsoluteFeuchte(float $temperatur, int $relfeuchte) {
                     //}
                 //}
                 //if ($temperature != $old_temp) {
-                    if (($temperature <= $old_temp + 5.0) || ($temperature >= $old_temp - 5.0)) {
+                    //if (($temperature <= $old_temp + 5.0) || ($temperature >= $old_temp - 5.0)) {
                         SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
                         SetValueInteger($this->GetIDForIdent("HUMIDITY"), $humidity);
                         $dewpoint = $this->Dewpoint($temperature, $humidity);
@@ -163,7 +163,7 @@ private function AbsoluteFeuchte(float $temperatur, int $relfeuchte) {
                         $abshum   = $this->AbsoluteFeuchte($temperature, $humidity);
                         SetValueFloat($this->GetIDForIdent("ABSHUM"), $abshum);
                         SetValueInteger($this->GetIDForIdent("PRESSURE"), $pressure);
-                    }
+                    //}
                 //}
             }
         } //if
