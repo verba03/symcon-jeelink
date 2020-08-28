@@ -117,18 +117,18 @@ class TX29IT extends IPSModule {
             $humidity    = $bytes[6] & 0x7f;
             // nur definierte Sensoren behandeln
             if ($addr == $this->ReadPropertyInteger("SensorID")) {
-                $old_temp = GetValueFloat($this->GetIDForIdent("TEMPERATUR"));
+                $old_temp = $this->GetValue("TEMPERATUR");
                 //$this->SendDebug ('OLD_TEMP', $old_temp, 0);
                 //$this->SendDebug ('NEW_TEMP', $temperature, 0);
                 $temperature = $this->Mittelwert($old_temp, $temperature);
                 //$this->SendDebug ('NEW_TEMP_M', $temperature, 0);
                 if ($temperature != $old_temp) {
                     if (($temperature <= ($old_temp + 5.0)) || ($temperature >= ($old_temp - 5.0))) {
-                        SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
+                        $this->SetValue("TEMPERATUR", $temperature);
                     }
                 }
-                if ($battery_low != GetValueBoolean($this->GetIDForIdent("BATTERY"))) {
-                    SetValueBoolean($this->GetIDForIdent("BATTERY"), $battery_low);
+                if ($battery_low != $this->GetValue("BATTERY")) {
+                    $this->SetValue("BATTERY", $battery_low);
                 }
             } //if
         } //if

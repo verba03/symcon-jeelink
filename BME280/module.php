@@ -138,13 +138,13 @@ private function AbsoluteFeuchte(float $temperatur, int $relfeuchte) {
             $pressure    = ($bytes[16] * 256) + $bytes[17];
             // nur definierte Sensoren behandeln
             if ($bytes[2] == $this->ReadPropertyInteger("SensorID")) {
-                SetValueFloat($this->GetIDForIdent("TEMPERATUR"), $temperature);
-                SetValueInteger($this->GetIDForIdent("HUMIDITY"), $humidity);
+                $this->SetValue("TEMPERATURE", $temperature);
+                $this->SetValue("HUMIDITY", $humidity);
                 $dewpoint = $this->Dewpoint($temperature, $humidity);
-                SetValueFloat($this->GetIDForIdent("DEWPOINT"), $dewpoint);
+                $this->SetValue("DEWPOINT", $dewpoint);
                 $abshum   = $this->AbsoluteFeuchte($temperature, $humidity);
-                SetValueFloat($this->GetIDForIdent("ABSHUM"), $abshum);
-                SetValueInteger($this->GetIDForIdent("PRESSURE"), $pressure);
+                $this->SetValue("ABSHUM", $abshum);
+                $this->SetValue("PRESSURE", $pressure);
             }
         } //if
     } //function
