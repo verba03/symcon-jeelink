@@ -108,7 +108,7 @@ class BMP180 extends IPSModule {
             $pressure    = ($bytes[16] * 256) + $bytes[17];
             // nur definierte Sensoren behandeln
             if ($bytes[2] == $this->ReadPropertyInteger("SensorID")) {
-                $this->SetValue("TEMPERATURE", $temperature);
+                $this->SetValue("TEMPERATUR", $temperature);
                 $this->SetValue("PRESSURE", $pressure);
             }
         } //if

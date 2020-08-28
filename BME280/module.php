@@ -138,7 +138,7 @@ private function AbsoluteFeuchte(float $temperatur, int $relfeuchte) {
             $pressure    = ($bytes[16] * 256) + $bytes[17];
             // nur definierte Sensoren behandeln
             if ($bytes[2] == $this->ReadPropertyInteger("SensorID")) {
-                $this->SetValue("TEMPERATURE", $temperature);
+                $this->SetValue("TEMPERATUR", $temperature);
                 $this->SetValue("HUMIDITY", $humidity);
                 $dewpoint = $this->Dewpoint($temperature, $humidity);
                 $this->SetValue("DEWPOINT", $dewpoint);

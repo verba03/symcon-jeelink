@@ -185,7 +185,7 @@ class TX29DHT extends IPSModule {
                 //$this->SendDebug('NEW_TEMP',$temperature,0);
                 $temperature = $this->Mittelwert($old_temp, $temperature);
                 if ($humidity != $old_hum ) {
-                    $this->SetValue("TEMPERATURE", $temperature);
+                    $this->SetValue("TEMPERATUR", $temperature);
                     $this->SetValue("HUMIDITY", $humidity);
                     $dewpoint = $this->Dewpoint($temperature, $humidity);
                     $this->SetValue("DEWPOINT", $dewpoint);
@@ -194,7 +194,7 @@ class TX29DHT extends IPSModule {
                 }
                 if ($temperature != $old_temp) {
                     if (($temperature <= $old_temp + 5.0) || ($temperature >= $old_temp - 5.0)) {
-                        $this->SetValue("TEMPERATURE", $temperature);
+                        $this->SetValue("TEMPERATUR", $temperature);
                         $this->SetValue("HUMIDITY", $humidity);
                         $dewpoint = $this->Dewpoint($temperature, $humidity);
                         $this->SetValue("DEWPOINT", $dewpoint);
@@ -202,7 +202,7 @@ class TX29DHT extends IPSModule {
                         $this->SetValue("ABSHUM", $abshum);
                     }
                 }
-                if ($battery_low != $tis->GetValue("BATTERY")) {
+                if ($battery_low != $this->GetValue("BATTERY")) {
                     $this->SetValue("BATTERY", $battery_low);
                 }
             } //if
